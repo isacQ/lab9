@@ -12,7 +12,9 @@
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "SELECT * FROM staff s";
+    $sql = "SELECT * 
+            FROM staff s
+            JOIN branch b ON b.branchNo = s.bno";
 
     $result = $conn -> query($sql);
     
